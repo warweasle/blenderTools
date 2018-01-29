@@ -1,5 +1,42 @@
 import bpy
 
+def mergeVertexGroups(targetName, sourceName):
+
+    o = bpy.context.object
+    bpy.ops.object.mode_set( mode = 'EDIT' )
+
+    target = o.vertex_groups[targetName]
+    source = o.vertex_groups[sourceName]          
+
+    # Deselect all verts and select only current VG    
+    bpy.ops.mesh.select_all( action = 'DESELECT' )
+
+    # Set the first vertex group as active:
+    o.vertex_groups.active = source
+    bpy.ops.object.vertex_group_select()
+    
+    # Set the second vertex group as active:
+    o.vertex_groups.active = target
+    bpy.ops.object.vertex_group_select()
+
+    bpy.ops.object.vertex_group_assign()
+    
+    o.vertex_groups.active = source    
+    bpy.ops.object.vertex_group_remove()
+
+    bpy.ops.object.mode_set( mode = 'OBJECT' )
+
+        
+mergeVertexGroups("lowerarm_L", "lowerarm_twist_L")
+mergeVertexGroups("lowerarm_R", "lowerarm_twist_R")
+mergeVertexGroups("upperarm_L", "upperarm_twist_L")
+mergeVertexGroups("upperarm_R", "upperarm_twist_R")
+mergeVertexGroups("thigh_L", "thigh_twist_L")
+mergeVertexGroups("thigh_R", "thigh_twist_R")
+mergeVertexGroups("calf_L", "calf_twist_L")
+mergeVertexGroups("calf_R", "calf_twist_R")
+
+
 map = {'ORG-spine':'pelvis',
  'ORG-spine.001': 'spine01',
  'ORG-spine.002': 'spine02',
