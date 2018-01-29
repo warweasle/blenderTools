@@ -12,16 +12,19 @@ def mergeVertexGroups(targetName, sourceName):
     bpy.ops.mesh.select_all( action = 'DESELECT' )
 
     # Set the first vertex group as active:
-    o.vertex_groups.active = source
+    o.vertex_groups.active_index = source.index 
+    #o.vertex_groups.active = source
     bpy.ops.object.vertex_group_select()
     
     # Set the second vertex group as active:
-    o.vertex_groups.active = target
+    o.vertex_groups.active_index = target.index
+    #o.vertex_groups.active = target
     bpy.ops.object.vertex_group_select()
 
     bpy.ops.object.vertex_group_assign()
     
-    o.vertex_groups.active = source    
+    o.vertex_groups.active_index = source.index
+    #o.vertex_groups.active = source    
     bpy.ops.object.vertex_group_remove()
 
     bpy.ops.object.mode_set( mode = 'OBJECT' )
@@ -35,6 +38,7 @@ mergeVertexGroups("thigh_L", "thigh_twist_L")
 mergeVertexGroups("thigh_R", "thigh_twist_R")
 mergeVertexGroups("calf_L", "calf_twist_L")
 mergeVertexGroups("calf_R", "calf_twist_R")
+
 
 
 map = {'ORG-spine':'pelvis',
