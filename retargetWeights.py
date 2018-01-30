@@ -30,14 +30,14 @@ def mergeVertexGroups(targetName, sourceName):
     bpy.ops.object.mode_set( mode = 'OBJECT' )
 
         
-mergeVertexGroups("lowerarm_L", "lowerarm_twist_L")
-mergeVertexGroups("lowerarm_R", "lowerarm_twist_R")
-mergeVertexGroups("upperarm_L", "upperarm_twist_L")
-mergeVertexGroups("upperarm_R", "upperarm_twist_R")
-mergeVertexGroups("thigh_L", "thigh_twist_L")
-mergeVertexGroups("thigh_R", "thigh_twist_R")
-mergeVertexGroups("calf_L", "calf_twist_L")
-mergeVertexGroups("calf_R", "calf_twist_R")
+#mergeVertexGroups("lowerarm_L", "lowerarm_twist_L")
+#mergeVertexGroups("lowerarm_R", "lowerarm_twist_R")
+#mergeVertexGroups("upperarm_L", "upperarm_twist_L")
+#mergeVertexGroups("upperarm_R", "upperarm_twist_R")
+#mergeVertexGroups("thigh_L", "thigh_twist_L")
+#mergeVertexGroups("thigh_R", "thigh_twist_R")
+#mergeVertexGroups("calf_L", "calf_twist_L")
+#mergeVertexGroups("calf_R", "calf_twist_R")
 
 
 
